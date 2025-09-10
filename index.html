@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nội thất Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">NỘI THẤT Giang Sơn</div>
+        <ul class="menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li class="dropdown">
+            <a href="products.html">Sản phẩm ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="products.html#phong-khach">Phòng khách</a></li>
+              <li><a href="products.html#phong-ngu">Phòng ngủ</a></li>
+              <li><a href="products.html#phong-an">Phòng ăn</a></li>
+              <li><a href="products.html#hoc-tap">Học tập</a></li>
+              <li><a href="products.html#phu-kien">Phụ kiện</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <div class="auth">
+          <!-- Ô tìm kiếm -->
+          <input type="text" id="search-box" placeholder="🔍 Tìm sản phẩm..." />
+          <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a>
+          <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner Slider -->
+    <section class="banner">
+      <div class="slides">
+        <img src="slide2.jpg" alt="Banner 1" />
+        <img src="slide3.webp" alt="Banner 2" />
+        <img src="slide4.jpeg" alt="Banner 3" />
+        <img src="slide5.webp" alt="Banner 3" />
+      </div>
+    </section>
+
+    <!-- Danh mục nổi bật -->
+    <section class="categories">
+      <h2>Danh mục sản phẩm</h2>
+      <div class="category-list">
+        <div class="cat-item">Phòng khách</div>
+        <div class="cat-item">Phòng ngủ</div>
+        <div class="cat-item">Phòng ăn</div>
+        <div class="cat-item">Văn phòng</div>
+      </div>
+    </section>
+
+    <!-- Sản phẩm nổi bật -->
+    <section class="products">
+      <h2>Sản phẩm nổi bật</h2>
+      <div class="product-list">
+        <div
+          class="product-card"
+          data-name="Giường ngủ cao cấp"
+          data-price="4500000"
+        >
+          <img src="giuongngu2.jpg" alt="sp1" />
+          <h3>Giường ngủ cao cấp</h3>
+          <p class="price">4.500.000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Bàn ăn đơn giản hiện đại"
+          data-price="3500000"
+        >
+          <img src="banan2.jpg" alt="sp2" />
+          <h3>Bàn ăn đơn giản hiện đại</h3>
+          <p class="price">3.500.000</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Tủ quần áo hiện đại"
+          data-price="6000000"
+        >
+          <img src="tu2.jpg" alt="sp3" />
+          <h3>Tủ quần áo hiện đại</h3>
+          <p class="price">7.000.000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Sofa hiện đại"
+          data-price="7000000"
+        >
+          <img src="sofa2.jpg" alt="sp4" />
+          <h3>Sofa hiện đại</h3>
+          <p class="">8.000.000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="Bàn làm việc cách tân"
+          data-price="3000000"
+        >
+          <img src="banlamviec2.jpg" alt="sp5" />
+          <h3>Bàn làm việc cách tân</h3>
+          <p class="">3.000.000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đánh giá khách hàng -->
+    <section class="reviews">
+      <h2>Khách hàng nói gì?</h2>
+      <div class="review-list">
+        <div class="review-card">
+          <p>"Sản phẩm chất lượng, giao hàng nhanh chóng!"</p>
+          <strong>- Anh Tuấn (Hà Nội)</strong>
+        </div>
+        <div class="review-card">
+          <p>"Mình rất hài lòng với sofa, ngồi êm lắm."</p>
+          <strong>- Chị Hoa (TP.HCM)</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giỏ hàng popup -->
+    <div id="cart-popup" class="cart-popup">
+      <h3>🛒 Giỏ hàng</h3>
+      <ul id="cart-items"></ul>
+      <p>
+        <strong>Tổng tiền: <span id="cart-total">0</span>đ</strong>
+      </p>
+      <button onclick="clearCart()">Xóa giỏ hàng</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <p>© 2025 Nội Thất Giang Sơn. All rights reserved.</p>
+        <p>Hotline: 0326976832 | Email: Dangnamson24@gmail.com</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

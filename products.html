@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm - Nội thất Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">NỘI THẤT DEMO</div>
+        <ul class="menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li class="dropdown">
+            <a href="products.html">Sản phẩm ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="products.html#phong-khach">Phòng khách</a></li>
+              <li><a href="products.html#phong-ngu">Phòng ngủ</a></li>
+              <li><a href="products.html#phong-an">Phòng ăn</a></li>
+              <li><a href="products.html#hoc-tap">Học tập</a></li>
+              <li><a href="products.html#phu-kien">Phụ kiện</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="auth">
+          <input type="text" id="search-box" placeholder="🔍 Tìm sản phẩm..." />
+          <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a>
+          <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Danh sách sản phẩm -->
+    <section id="products">
+      <h2>Tất cả sản phẩm</h2>
+      <!-- Thanh danh mục -->
+      <div class="category-menu">
+        <button onclick="filterCategory('all')">Tất cả</button>
+        <button onclick="filterCategory('phong-khach')">Phòng khách</button>
+        <button onclick="filterCategory('phong-ngu')">Phòng ngủ</button>
+        <button onclick="filterCategory('phong-an')">Phòng ăn</button>
+        <button onclick="filterCategory('hoc-tap')">Học tập</button>
+        <button onclick="filterCategory('phu-kien')">Phụ kiện</button>
+      </div>
+
+      <div class="product-list">
+        <!-- 10 sản phẩm mẫu -->
+        <div
+          class="product-card"
+          data-name="Giường ngủ cao cấp"
+          data-price="4500000"
+        >
+          <img src="giuongngu2.jpg" alt="Giường ngủ" />
+          <h3>Giường ngủ cao cấp</h3>
+          <p>4,500,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Giường ngủ cách tân "
+          data-price="3000000"
+        >
+          <img src="giuongngu1.jpg" alt="Giường ngủ" />
+          <h3>Giường ngủ cách tân</h3>
+          <p>3.000,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Bàn ăn đơn giản hiện đại"
+          data-price="3500000"
+        >
+          <img src="banan2.jpg" alt="Bàn ăn" />
+          <h3>Bàn ăn đơn giản hiện đại</h3>
+          <p>3,500,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Bàn ăn cách tân"
+          data-price="5000000"
+        >
+          <img src="banan1.jpg" alt="bàn ăn" />
+          <h3>Bàn ăn cách tân</h3>
+          <p>5,000,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Tủ quần áo hiện đại"
+          data-price="7000000"
+        >
+          <img src="tu2.jpg" alt="Bàn trà" />
+          <h3>Tủ quần áo hiện đại</h3>
+          <p>7,000,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Tủ quần áo cách tân mang thiên hướng hiện đại"
+          data-price="6500000"
+        >
+          <img src="tu1.webp" alt="Tủ quần áo" />
+          <h3>Tủ quần áo cách tân mang thiên hướng hiện đại</h3>
+          <p>6,500,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Sofa hiện đại"
+          data-price="8000000"
+        >
+          <img
+            src="sofa2.jpg
+          "
+            alt="Sofa"
+          />
+          <h3>Sofa hiện đại</h3>
+          <p>8,000,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div class="product-card" data-name="Sofa đơn giản" data-price="650000">
+          <img src="sofa1.jpg" alt="Sofa" />
+          <h3>Sofa đơn giản</h3>
+          <p>6,500,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Bàn làm việc cách tân"
+          data-price="3000000"
+        >
+          <img src="banlamviec2.jpg" alt="Bàn làm việc" />
+          <h3>Bàn làm việc cách tân</h3>
+          <p>3,000,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div
+          class="product-card"
+          data-name="Bàn làm việc đơn giản"
+          data-price="2100000"
+        >
+          <img src="banlamviec1.jpg" alt="Bàn làm việc" />
+          <h3>Bàn làm việc đơn giản</h3>
+          <p>2,100,000đ</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giỏ hàng popup -->
+    <div id="cart-popup" class="cart-popup">
+      <h3>🛒 Giỏ hàng</h3>
+      <ul id="cart-items"></ul>
+      <p>
+        <strong>Tổng tiền: <span id="cart-total">0</span>đ</strong>
+      </p>
+      <button onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <p>© 2025 Nội Thất Giang Sơn. All rights reserved.</p>
+        <p>Hotline: 0326976832 | Email: Dangnamson24@gmail.com</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

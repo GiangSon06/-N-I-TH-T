@@ -1,0 +1,319 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .auth a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: none;
+}
+
+/* Categories */
+.categories {
+  padding: 40px 20px;
+  text-align: center;
+}
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.cat-item {
+  padding: 15px 25px;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Products */
+.products {
+  padding: 40px 20px;
+  text-align: center;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 sản phẩm 1 hàng */
+  gap: 20px; /* khoảng cách giữa các sản phẩm */
+  margin-top: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  border-color: #ff6600;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+/* Reviews */
+.reviews {
+  background: #f1f1f1;
+  padding: 40px 20px;
+  text-align: center;
+}
+.review-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.review-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+/* giữ nguyên phần cũ */
+
+/* Giỏ hàng icon */
+.cart-icon {
+  margin-left: 15px;
+  cursor: pointer;
+  background: #444;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.cart-icon span {
+  background: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* Giỏ hàng popup */
+.cart-popup {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+.cart-popup h3 {
+  margin-top: 0;
+}
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.cart-popup li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+.cart-popup button {
+  margin-top: 10px;
+  background: red;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Thanh tìm kiếm */
+#search-box {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+.category-menu {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.category-menu button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-menu button:hover {
+  background: #ff6600;
+}
+/* Căn chỉnh menu ngang */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+/* Menu con ẩn ban đầu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333; /* nền tối cho hợp navbar */
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 180px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background: #444;
+  color: #ff6600;
+}
+
+/* Hiện khi hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* Thanh menu ngang */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: #333;
+  padding: 10px 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào mục chính */
+.menu li a:hover {
+  color: #ff6600; /* Đổi màu chữ */
+  transform: translateY(-3px); /* Nổi lên */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu con ẩn ban đầu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 180px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: #444;
+  color: #ff6600;
+}
+
+/* Hiện menu con khi hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
