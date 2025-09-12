@@ -12,6 +12,7 @@ showSlide();
 setInterval(showSlide, 3000);
 
 // Giỏ hàng
+// Giỏ hàng
 let cart = [];
 const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
@@ -22,8 +23,16 @@ function addToCart(button) {
   const card = button.closest(".product-card");
   const name = card.getAttribute("data-name");
   const price = parseInt(card.getAttribute("data-price"));
+  const image = card.querySelector("img").src; // lấy ảnh sản phẩm
 
-  cart.push({ name, price });
+  // kiểm tra đã có trong giỏ chưa
+  const existing = cart.find((item) => item.name === name);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ name, price, image, quantity: 1 });
+  }
+
   updateCart();
 }
 
@@ -32,12 +41,26 @@ function updateCart() {
   let total = 0;
 
   cart.forEach((item, index) => {
-    total += item.price;
+    total += item.price * item.quantity;
+
     const li = document.createElement("li");
     li.innerHTML = `
-      <span>${item.name} - ${item.price.toLocaleString()}đ</span>
+      <img src="${item.image}" alt="${
+      item.name
+    }" style="width:50px;height:50px;object-fit:cover;margin-right:8px;border-radius:5px;">
+      <div style="flex:1;">
+        <p><strong>${item.name}</strong></p>
+        <p>Giá: ${item.price.toLocaleString()}đ</p>
+        <p>Số lượng: ${item.quantity}</p>
+      </div>
       <button onclick="removeFromCart(${index})">X</button>
     `;
+    li.style.display = "flex";
+    li.style.alignItems = "center";
+    li.style.marginBottom = "10px";
+    li.style.borderBottom = "1px solid #eee";
+    li.style.paddingBottom = "8px";
+
     cartItems.appendChild(li);
   });
 
@@ -46,7 +69,7 @@ function updateCart() {
 }
 
 function removeFromCart(index) {
-  cart.splice(index, 1); // Xóa sản phẩm tại vị trí index
+  cart.splice(index, 1);
   updateCart();
 }
 
@@ -59,6 +82,15 @@ function clearCart() {
   cart = [];
   updateCart();
 }
+
+function checkout() {
+  if (cart.length === 0) {
+    alert("Giỏ hàng trống!");
+  } else {
+    alert("Đi đến trang thanh toán (sau này sẽ kết nối backend).");
+  }
+}
+
 // Lọc sản phẩm theo danh mục
 function filterCategory(category) {
   const products = document.querySelectorAll(".product-card");

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sản phẩm - Nội thất Demo</title>
+    <title>Sản phẩm - Nội thất Giang Sơn</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Navbar -->
     <header>
       <nav class="navbar">
-        <div class="logo">NỘI THẤT DEMO</div>
+        <div class="logo">NỘI THẤT Giang Sơn</div>
         <ul class="menu">
           <li><a href="index.html">Trang chủ</a></li>
           <li class="dropdown">
@@ -23,7 +23,7 @@
               <li><a href="products.html#phu-kien">Phụ kiện</a></li>
             </ul>
           </li>
-          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="promotion.html">Khuyến mãi</a></li>
           <li><a href="#">Tin tức</a></li>
           <li><a href="#">Liên hệ</a></li>
         </ul>
@@ -59,7 +59,7 @@
         >
           <img src="giuongngu2.jpg" alt="Giường ngủ" />
           <h3>Giường ngủ cao cấp</h3>
-          <p>4,500,000đ</p>
+          <p class="price">4,500,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -69,7 +69,7 @@
         >
           <img src="giuongngu1.jpg" alt="Giường ngủ" />
           <h3>Giường ngủ cách tân</h3>
-          <p>3.000,000đ</p>
+          <p class="price">3.000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -79,7 +79,7 @@
         >
           <img src="banan2.jpg" alt="Bàn ăn" />
           <h3>Bàn ăn đơn giản hiện đại</h3>
-          <p>3,500,000đ</p>
+          <p class="price">3,500,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -89,7 +89,7 @@
         >
           <img src="banan1.jpg" alt="bàn ăn" />
           <h3>Bàn ăn cách tân</h3>
-          <p>5,000,000đ</p>
+          <p class="price">5,000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -99,7 +99,7 @@
         >
           <img src="tu2.jpg" alt="Bàn trà" />
           <h3>Tủ quần áo hiện đại</h3>
-          <p>7,000,000đ</p>
+          <p class="price">7,000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -109,7 +109,7 @@
         >
           <img src="tu1.webp" alt="Tủ quần áo" />
           <h3>Tủ quần áo cách tân mang thiên hướng hiện đại</h3>
-          <p>6,500,000đ</p>
+          <p class="price">6,500,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -123,13 +123,13 @@
             alt="Sofa"
           />
           <h3>Sofa hiện đại</h3>
-          <p>8,000,000đ</p>
+          <p class="price">8,000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div class="product-card" data-name="Sofa đơn giản" data-price="650000">
           <img src="sofa1.jpg" alt="Sofa" />
           <h3>Sofa đơn giản</h3>
-          <p>6,500,000đ</p>
+          <p class="price">6,500,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -139,7 +139,7 @@
         >
           <img src="banlamviec2.jpg" alt="Bàn làm việc" />
           <h3>Bàn làm việc cách tân</h3>
-          <p>3,000,000đ</p>
+          <p class="price">3,000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
         <div
@@ -149,7 +149,7 @@
         >
           <img src="banlamviec1.jpg" alt="Bàn làm việc" />
           <h3>Bàn làm việc đơn giản</h3>
-          <p>2,100,000đ</p>
+          <p class="price">2,100,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
       </div>
@@ -164,10 +164,86 @@
       </p>
       <button onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
     </div>
-    <footer>
+    <footer class="footer">
       <div class="footer-container">
-        <p>© 2025 Nội Thất Giang Sơn. All rights reserved.</p>
-        <p>Hotline: 0326976832 | Email: Dangnamson24@gmail.com</p>
+        <!-- Cột 1: Giới thiệu -->
+        <div class="footer-col">
+          <h3>NỘI THẤT Giang Sơn</h3>
+          <p>
+            Nội Thất Giang Sơn là thương hiệu nội thất với nhiều năm kinh nghiệm
+            trong sản xuất & xuất khẩu nội thất đạt chuẩn quốc tế.
+          </p>
+        </div>
+
+        <!-- Cột 2: Chính sách -->
+        <div class="footer-col">
+          <h3>THÔNG TIN</h3>
+          <ul>
+            <li><a href="#">Chính Sách Bán Hàng</a></li>
+            <li><a href="#">Chính Sách Giao Hàng & Lắp Đặt</a></li>
+            <li><a href="#">Chính Sách Bảo Hành & Bảo Trì</a></li>
+            <li><a href="#">Chính Sách Đổi Trả</a></li>
+            <li><a href="#">Khách Hàng Thân Thiết</a></li>
+            <li><a href="#">Chính Sách Đối Tác Bán Hàng</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Liên hệ -->
+        <div class="footer-col">
+          <h3>THÔNG TIN LIÊN HỆ</h3>
+          <p>
+            <strong
+              >Trụ sở chính:41A Đ. Phú Diễn, Phú Diễn, Bắc Từ Liêm, Hà
+              Nội</strong
+            >
+          </p>
+
+          <p>Hotline: 0326976832</p>
+          <p>CSKH: Dangnamson24@gmail.com</p>
+          <p>STK: 023004099999 - MB Bank</p>
+        </div>
+
+        <!-- Cột 4: Fanpage -->
+
+        <div class="footer-col">
+          <h3>FANPAGE</h3>
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?
+      href=https%3A%2F%2Fwww.facebook.com%2Ffacebook
+      &tabs&width=300&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            width="300"
+            height="200"
+            style="border: none; overflow: hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Mạng xã hội -->
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/giang.son.114064  "
+            ><img src="facebook.jpg" alt="Facebook"
+          /></a>
+          <a href="https://www.youtube.com/@kenjiac1413"
+            ><img src="youtube.png" alt="YouTube"
+          /></a>
+          <a href="https://www.instagram.com/nhimsthongthai/"
+            ><img src="instagram.jpg" alt="Instagram"
+          /></a>
+          <a href="https://www.tiktok.com/@nhimsthongthai"
+            ><img src="tiktok.jpg" alt="TikTok"
+          /></a>
+        </div>
+        <p>
+          <a
+            href="https://www.google.com/maps/place/Hanoi+University+of+Natural+Resources+and+Environment/@21.0470484,105.7581067,16z/data=!4m6!3m5!1s0x313454c3ce577141:0xb1a1ac92701777bc!8m2!3d21.0470486!4d105.7624371!16s%2Fg%2F11b6dylw9c?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            >Chỉ đường đến showroom trên Google Maps</a
+          >
+        </p>
       </div>
     </footer>
 
