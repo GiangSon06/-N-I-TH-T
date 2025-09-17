@@ -14,17 +14,10 @@
         <ul class="menu">
           <li><a href="index.html">Trang chủ</a></li>
           <li class="dropdown">
-            <a href="products.html">Sản phẩm ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="products.html#phong-khach">Phòng khách</a></li>
-              <li><a href="products.html#phong-ngu">Phòng ngủ</a></li>
-              <li><a href="products.html#phong-an">Phòng ăn</a></li>
-              <li><a href="products.html#hoc-tap">Học tập</a></li>
-              <li><a href="products.html#phu-kien">Phụ kiện</a></li>
-            </ul>
+            <a href="products.html">Sản phẩm </a>
           </li>
           <li><a href="promotion.html">Khuyến mãi</a></li>
-          <li><a href="#">Tin tức</a></li>
+          <li><a href="about.html">Giới thiệu</a></li>
           <li><a href="#">Liên hệ</a></li>
         </ul>
         <div class="auth">
@@ -36,6 +29,9 @@
         </div>
       </nav>
     </header>
+    <section class="banner_products">
+      <img src="section_products.jpg" />
+    </section>
 
     <!-- Danh sách sản phẩm -->
     <section id="products">
@@ -56,6 +52,7 @@
           class="product-card"
           data-name="Giường ngủ cao cấp"
           data-price="4500000"
+          data-category="phong-ngu"
         >
           <img src="giuongngu2.jpg" alt="Giường ngủ" />
           <h3>Giường ngủ cao cấp</h3>
@@ -66,6 +63,7 @@
           class="product-card"
           data-name="Giường ngủ cách tân "
           data-price="3000000"
+          data-category="phong-ngu"
         >
           <img src="giuongngu1.jpg" alt="Giường ngủ" />
           <h3>Giường ngủ cách tân</h3>
@@ -76,6 +74,7 @@
           class="product-card"
           data-name="Bàn ăn đơn giản hiện đại"
           data-price="3500000"
+          data-category="phong-an"
         >
           <img src="banan2.jpg" alt="Bàn ăn" />
           <h3>Bàn ăn đơn giản hiện đại</h3>
@@ -86,6 +85,7 @@
           class="product-card"
           data-name="Bàn ăn cách tân"
           data-price="5000000"
+          data-category="phong-an"
         >
           <img src="banan1.jpg" alt="bàn ăn" />
           <h3>Bàn ăn cách tân</h3>
@@ -96,6 +96,7 @@
           class="product-card"
           data-name="Tủ quần áo hiện đại"
           data-price="7000000"
+          data-category="phong-ngu"
         >
           <img src="tu2.jpg" alt="Bàn trà" />
           <h3>Tủ quần áo hiện đại</h3>
@@ -106,6 +107,7 @@
           class="product-card"
           data-name="Tủ quần áo cách tân mang thiên hướng hiện đại"
           data-price="6500000"
+          data-category="phong-ngu"
         >
           <img src="tu1.webp" alt="Tủ quần áo" />
           <h3>Tủ quần áo cách tân mang thiên hướng hiện đại</h3>
@@ -116,6 +118,7 @@
           class="product-card"
           data-name="Sofa hiện đại"
           data-price="8000000"
+          data-category="phong-khach"
         >
           <img
             src="sofa2.jpg
@@ -126,7 +129,12 @@
           <p class="price">8,000,000đ</p>
           <button onclick="addToCart(this)">Thêm vào giỏ</button>
         </div>
-        <div class="product-card" data-name="Sofa đơn giản" data-price="650000">
+        <div
+          class="product-card"
+          data-name="Sofa đơn giản"
+          data-price="650000"
+          data-category="phong-khach"
+        >
           <img src="sofa1.jpg" alt="Sofa" />
           <h3>Sofa đơn giản</h3>
           <p class="price">6,500,000đ</p>
@@ -136,6 +144,7 @@
           class="product-card"
           data-name="Bàn làm việc cách tân"
           data-price="3000000"
+          data-category="hoc-tap"
         >
           <img src="banlamviec2.jpg" alt="Bàn làm việc" />
           <h3>Bàn làm việc cách tân</h3>
@@ -146,6 +155,7 @@
           class="product-card"
           data-name="Bàn làm việc đơn giản"
           data-price="2100000"
+          data-category="hoc-tap"
         >
           <img src="banlamviec1.jpg" alt="Bàn làm việc" />
           <h3>Bàn làm việc đơn giản</h3>

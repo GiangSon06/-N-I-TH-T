@@ -66,6 +66,7 @@ body {
   padding: 40px 20px;
   text-align: center;
 }
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 sản phẩm 1 hàng */
@@ -400,23 +401,6 @@ footer {
   }
 }
 /* khuyến mãi */
-.promo-banner {
-  background: linear-gradient(45deg, #ff6600, #ff9933);
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-}
-
-.promo-banner h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-
-.promo-banner p {
-  font-size: 1.2rem;
-}
 
 #promotion-products h2 {
   text-align: center;
@@ -499,4 +483,47 @@ footer {
 
 .social-icons a img:hover {
   transform: scale(1.2);
+}
+/* giới thiệu */
+main#about {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main#about h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+main#about p {
+  margin-bottom: 15px;
+  font-size: 17px;
+  text-align: justify;
+}
+
+/* Banner */
+#about::before {
+  content: "";
+  display: block;
+  background: url("https://picsum.photos/1200/300?grayscale") no-repeat
+    center/cover;
+  height: 200px;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+  font-size: 14px;
 }
