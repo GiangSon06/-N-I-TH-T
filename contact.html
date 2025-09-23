@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giới thiệu - Nội thất Giang Sơn</title>
+    <title>Liên hệ - Nội Thất Giang Sơn</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -20,43 +20,45 @@
           <li><a href="about.html">Giới thiệu</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
         </ul>
-
-        <div class="auth">
-          <!-- Ô tìm kiếm -->
-          <input type="text" id="search-box" placeholder="🔍 Tìm sản phẩm..." />
-          <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a>
-          <div class="cart-icon" onclick="toggleCart()">
-            🛒 <span id="cart-count">0</span>
-          </div>
-        </div>
       </nav>
     </header>
 
-    <!-- Nội dung giới thiệu -->
-    <main id="about">
-      <h2>Về Nội thất Giang Sơn</h2>
-      <p>
-        <strong>Nội thất Giang Sơn</strong> – thương hiệu mới trong lĩnh vực nội
-        thất Việt Nam, mang đến sự kết hợp giữa
-        <em>thiết kế hiện đại, chất lượng bền vững và giá cả hợp lý</em>.
-      </p>
-
-      <p>
-        Chúng tôi cung cấp những sản phẩm nội thất đa dạng cho
-        <strong
-          >phòng khách, phòng ngủ, phòng ăn, học tập và phụ kiện trang
-          trí</strong
-        >, giúp không gian sống của bạn trở nên tiện nghi và sang trọng hơn.
-      </p>
-
-      <p>
-        Với phương châm
-        <q>Chất lượng tạo niềm tin – Phong cách khẳng định giá trị</q>, Nội thất
-        Giang Sơn mong muốn đồng hành cùng bạn trong việc kiến tạo ngôi nhà mơ
-        ước.
-      </p>
-    </main>
-
+    <!-- Form liên hệ -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-form">
+          <h2>Liên hệ đặt lịch tư vấn các sản phẩm Nội Thất Giang Sơn</h2>
+          <form id="contactForm">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Họ và tên (bắt buộc)"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Số điện thoại (bắt buộc)"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Ghi chú khác của quý khách"
+            ></textarea>
+            <button type="submit">Gửi yêu cầu</button>
+          </form>
+          <!-- Thông báo sẽ hiển thị ở đây -->
+          <p id="formMessage" class="form-message"></p>
+        </div>
+        <div class="contact-image">
+          <img src="hotrokhachhang.png" alt="Hỗ trợ khách hàng" />
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
@@ -140,5 +142,6 @@
         </p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
